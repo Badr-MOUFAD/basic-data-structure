@@ -1,3 +1,6 @@
+# Node object is the build in block
+# for creating all the other data structures
+
 
 class Node:
     def __init__(self, data, left=None, right=None):
@@ -5,7 +8,6 @@ class Node:
         self.__left = None
         self.__right = None
 
-        # left and right are references of Node objects
         if isinstance(left, (Node, type(None))) and isinstance(right, (Node, type(None))):
             self.left = left
             self.right = right
@@ -36,3 +38,6 @@ class Node:
 
         self.__right = value
         return
+
+    def __str__(self):
+        return str(self.left) + " " + str(self.data) + " " + str(self.right)
