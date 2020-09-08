@@ -63,8 +63,7 @@ class LinkedList:
 
     def popBack(self):
         if self.nbNode < 2:
-            self.popFront()
-            return
+            return self.popFront()
 
         popedValue = self.tail.left.data
         mostLeftNode = self.tail.left.left

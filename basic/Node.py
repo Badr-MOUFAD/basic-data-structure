@@ -38,6 +38,3 @@ class Node:
 
         self.__right = value
         return
-
-    def __str__(self):
-        return str(self.left) + " " + str(self.data) + " " + str(self.right)
