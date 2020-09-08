@@ -33,10 +33,13 @@ class LinkedList:
             raise Exception("List already empty")
 
         if self.nbNode == 1:
+            popedValue = self.head.right.data
+
             self.head.right = None
             self.tail.left = None
             self.nbNode = 0
-            return
+
+            return popedValue
 
         popedValue = self.head.right.data
         mostRightNode = self.head.right.right
@@ -54,13 +57,14 @@ class LinkedList:
             node = Node(data, left=self.tail.left, right=self.tail)
             self.tail.left.right = node
             self.tail.left = node
+            self.nbNode += 1
 
-        self.nbNode += 1
         return
 
     def popBack(self):
         if self.nbNode < 2:
             self.popFront()
+            return
 
         popedValue = self.tail.left.data
         mostLeftNode = self.tail.left.left
