@@ -63,10 +63,10 @@ class LinkedList:
             self.popFront()
 
         popedValue = self.tail.left.data
-        mostleftNode = self.tail.left.left
+        mostLeftNode = self.tail.left.left
 
-        mostleftNode.right = self.tail
-        self.tail.left = mostleftNode
+        mostLeftNode.right = self.tail
+        self.tail.left = mostLeftNode
         self.nbNode -= 1
 
         return popedValue
