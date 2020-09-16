@@ -1,4 +1,5 @@
 
+
 class HeapBinaryTree:
     def __init__(self, arr=None, priority="max"):
         self.arr = [] if arr is None else arr
@@ -201,3 +202,13 @@ class HeapBinaryTree:
             return result
 
         return result[-1:0:-1] + [result[0]]
+
+
+n = int(input(""))
+arr = [int(c) for c in input("").split(" ")]
+
+h = HeapBinaryTree(arr=arr, priority="min")
+
+print(h.nbSwaps)
+for swap in h.arrSwaps:
+    print(swap)
